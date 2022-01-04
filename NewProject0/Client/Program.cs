@@ -5,47 +5,53 @@ namespace NewProject0
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
             Console.WriteLine("Hello There How are you?");
             Console.WriteLine("This is a Test");
             ///
             /// 
-            bool cont = true;
-
-            while (cont)
-            {
-                PrintMainMenu();
-                string input = Console.ReadLine();
+            
+            
+                //PrintMainMenu();
+                //string input = Console.ReadLine();
                 //MainMenuSelection(input, ref cont);
-            }
+            
+        
+             public static void AddCustomerConsole()
+        {
+            Console.Clear();
+            Console.WriteLine("Please provide first name:");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Please provide last name:");
+            string lastName = Console.ReadLine();
+            AddCustomer(firstName, lastName);
         }
 
         /// <summary>
-        /// Prints the main menu
+        /// Prints list of all customers
         /// </summary>
-        public static void PrintMainMenu()
+        public static void PrintAllCustomersConsole()
         {
             Console.Clear();
-            Console.WriteLine("Welcome to Store!");
-            Console.WriteLine("Please Select From the Following Options: ");
-            Console.WriteLine("(1) Add Customer");
-            Console.WriteLine("(2) View All Customers");
-            Console.WriteLine("(3) Change Customer");
-            Console.WriteLine("(4) Add Location");
-            Console.WriteLine("(5) View All Locations");
-            Console.WriteLine("(6) Select Location");
-            Console.WriteLine("(7) View Inventory at Location");
-            Console.WriteLine("(8) Modify Inventory at Location");
-            Console.WriteLine("(9) View All Orders");
-            Console.WriteLine("(10) View All Orders By Customer");
-            Console.WriteLine("(11) View All Orders At Location");
-            Console.WriteLine("(12) Make New Order");
-            Console.WriteLine("(13) View an Order's Details");
-            Console.WriteLine("E(x)it");
-            Console.Write("Selection: ");
+
+            if (!(NumOfCurrentCustomers() == 0))
+            {
+                var customers = GetAllCustomers();
+                foreach (var c in customers)
+                {
+                    Console.WriteLine("FirstName\t|LastName\t | CustomerID");
+                    Console.WriteLine($"{c.FirstName,16}|{c.LastName,16}| {c.Id}");
+                    Console.WriteLine("----------------------------------------------");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Customers Currently in System.");
+            }
         }
 
     }
 
-}
+

@@ -12,7 +12,7 @@ namespace NewProject0.Storage
     {
         //My Sql server connection
         //DESKTOP-UFOCI86\\MSSQLSERVER01
-        public readonly string str = "Data source = DESKTOP-UFOCI86\\MSSQLSERVER01; initial Catalog=NewProject0; integrated security =true";
+        public readonly string str = "Data source = DESKTOP-UFOCI86\\MSSQLSERVER01; initial Catalog=NewP0; integrated security =true";
         private readonly SqlConnection conn;
         private readonly IMapper _mapper;
 
