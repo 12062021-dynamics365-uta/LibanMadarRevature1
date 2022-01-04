@@ -9,7 +9,6 @@ namespace SweetnSaltyConsole
         // print sweetNSalty for multipes of 3 and 5
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             int sweet = 0;
             int salty = 0;
             int sweetNSalty = 0;
